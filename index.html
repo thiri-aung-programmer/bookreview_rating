@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phoenix Bookshop</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/brands.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        
+        body {
+            background-image: linear-gradient(to right top, rgb(86, 180, 253), rgb(248, 252, 58), rgb(251, 138, 135));
+            min-height: 100vh;
+            width: 100%;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .headergp {
+            width: 100%;
+            height: 14rem;
+            background-color: rgb(254, 33, 106);
+            display: flex;
+            justify-content: center;
+        }
+        
+        .headergp img {
+            width: 10%;
+            margin-left: 20px;
+            margin-right: 20px;
+            display: inline;
+        }
+        
+        #header {
+            display: inline;
+            text-align: center;
+            color: #1846a6;
+            font-size: 6rem;
+            font-weight: bold;
+            font-family: "Snap ITC";
+            padding-top: 35px;
+            text-shadow: 5px 4px 5px rgb(249, 248, 248);
+        }
+        
+        #searchgp {
+            width: 100%;
+            display: flex;
+            height: 5rem;
+            justify-content: right;
+            align-items: center;
+            background-color: rgb(161, 144, 253);
+        }
+        
+        #searchgp div {
+            display: inline-flex;
+            width: 20%;
+            margin-right: 225px;
+            height: 3.2rem;
+        }
+        
+        #searchgp h3 {
+            margin-right: 20px;
+            font-size: 1.7rem;
+            color: rgb(155, 6, 6);
+        }
+        
+        #searchgp i {
+            margin-right: 15px;
+            margin-left: 10px;
+            color: rgb(2, 85, 17);
+        }
+        
+        #search i {
+            display: inline;
+            width: 10%;
+            font-size: 1.4rem;
+            height: 2.15rem;
+            color: white;
+            padding-left: 10px;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            background: rgb(162, 13, 162);
+            margin: 0;
+            margin-bottom: 20px;
+            border: 4px solid rgb(162, 13, 162);
+        }
+        
+        #search input {
+            width: 78%;
+            display: inline;
+            height: 3rem;
+            padding-left: 10px;
+            font-size: 1.7rem;
+            color: rgb(243, 237, 237);
+            text-shadow: 2px 2px 3px rgb(59, 15, 15);
+        }
+        
+        .outer {
+            display: flex;
+            width: 90%;
+            margin-left: 5%;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .prev {
+            width: 3%;
+            display: inline-flex;
+            font-size: 3.5rem;
+            position: absolute;
+            left: 3%;
+            top: 590px;
+            z-index: 10;
+        }
+        
+        .next {
+            width: 3%;
+            display: inline-flex;
+            font-size: 3.5rem;
+            position: absolute;
+            left: 95%;
+            top: 590px;
+            z-index: 10;
+        }
+        
+        #container {
+            display: inline-flex;
+            flex-wrap: wrap;
+            width: 100%;
+            position: absolute;
+            height: 50%;
+            left: 0;
+            z-index: 4;
+            top: 304px;
+        }
+        
+        #center {
+            width: 45%;
+            position: absolute;
+            left: 0;
+            z-index: 1;
+            top: 304px;
+        }
+        
+        #cover {
+            display: inline-flex;
+            width: 70%;
+            height: 800px;
+            z-index: -1;
+            background-image: transparent;
+        }
+        
+        .left {
+            width: 55%;
+            margin-top: 15px;
+            display: inline;
+        }
+        
+        .left h2 {
+            margin-left: 20%;
+            font-size: 2rem;
+            font-weight: bold;
+            color: darkblue;
+            text-shadow: 2px 4px 5px gray;
+            margin-bottom: 10px;
+        }
+        
+        .left h4 {
+            margin-left: 20%;
+            font-size: 1.4rem;
+            color: rgb(105, 90, 1);
+            text-shadow: 2px 4px 5px rgb(203, 203, 203);
+            margin-bottom: 10px;
+        }
+        
+        .left h5 {
+            margin-left: 20%;
+            font-size: 2rem;
+            color: rgb(103, 4, 91);
+            text-shadow: 2px 4px 5px rgb(252, 251, 251);
+            margin-bottom: 10px;
+        }
+        
+        .left p {
+            text-align: justify;
+            width: 80%;
+            font-size: 1.5rem;
+            padding: 10px;
+            margin-left: 20%;
+            line-height: 2.5rem;
+            color: rgb(40, 11, 1);
+            text-shadow: 2px 4px 5px rgb(211, 208, 208);
+            background-image: linear-gradient(to right top, rgb(86, 180, 253), rgb(248, 252, 58), rgb(251, 138, 135));
+        }
+        
+        .right {
+            width: 35%;
+            display: inline;
+            margin-left: 150px;
+            margin-top: 15px;
+        }
+        
+        .right img {
+            margin-top: 8%;
+            width: 70%;
+            margin-left: 10%;
+        }
+        
+        .usergp {
+            width: 80%;
+            margin-left: 20%;
+            display: flex;
+            justify-content: right;
+        }
+        
+        .usergp i {
+            color: rgb(59, 15, 15);
+            font-size: 2.3rem;
+        }
+        
+        .usergp span {
+            color: rgb(59, 15, 15);
+            font-weight: bold;
+            margin-left: 10px;
+            font-size: 2rem;
+        }
+        
+        .usergp article {
+            color: rgb(21, 2, 65);
+            margin-left: 10px;
+            margin-top: 3px;
+            font-size: 1.8rem;
+        }
+        
+        .hide {
+            display: none;
+        }
+        
+        .seek {
+            display: inline-block;
+        }
+        
+        .classname2 {
+            animation-name: chgshape2;
+            animation-duration: 1s;
+            animation-iteration-count: 1;
+            animation-timing-function: ease;
+            animation-fill-mode: forwards;
+        }
+        
+        @keyframes chgshape2 {
+            0% {
+                left: 100%;
+            }
+            100% {
+                left: 0%;
+            }
+            /* 100% {
+                left: 100%
+            } */
+        }
+        
+        .classname {
+            animation-name: chgshape;
+            animation-duration: 1s;
+            animation-iteration-count: 1;
+            animation-timing-function: ease;
+            animation-fill-mode: forwards;
+        }
+        
+        @keyframes chgshape {
+            0% {
+                left: 0%;
+            }
+            100% {
+                left: 100%;
+            }
+            /* 100% {
+                left: 0%;
+            } */
+        }
+    </style>
+    <script>
+        let arr = [{
+            "bookimg": "b1.png",
+            "title": "မေတ္တာ…အလင်းနဲ့စွမ်းအား",
+            "author": "မွန်ဟော်စီ",
+            "rating": 5.5,
+            "review": 1,
+            "username": "Mg Mg",
+            "rdate": "16 Feb 2022"
+
+        }, {
+            "bookimg": "b2.png",
+            "title": "အခါတစ်ပါး",
+            "author": "စံပယ်ဖြူနု",
+            "rating": 2.5,
+            "review": 2,
+            "username": "Aung Myaing",
+            "rdate": "10 June 2021"
+
+        }, {
+            "bookimg": "b3.png",
+            "title": "ငြိမ်းချမ်းမှုကို ရှာဖွေခြင်း",
+            "author": "မောင်သန်း",
+            "rating": 3.5,
+            "review": 3,
+            "username": "Win Aye",
+            "rdate": "1 Aug 2019"
+
+        }, {
+            "bookimg": "b4.png",
+            "title": "ဗုဒ္ဓဝါဒဘာကြောင့်မှန်သလဲ",
+            "author": "ညီညီနိုင်",
+            "rating": 5,
+            "review": 4,
+            "username": "Mg Mg",
+            "rdate": "15 May 2018"
+
+        }, {
+            "bookimg": "b5.png",
+            "title": "အမှောင်နဲ့မလွတ်တဲ့ ကြယ်တွေ",
+            "author": "ဘိုဘိုသန့်ဇင်",
+            "rating": 5.5,
+            "review": 5,
+            "username": "Aye Aye",
+            "rdate": "10 Sep 2021"
+
+        }, {
+            "bookimg": "b6.png",
+            "title": "သွေးစုပ်မြေ",
+            "author": "ရွှေဥဒေါင်း",
+            "rating": 8,
+            "review": 6,
+            "username": "Su Mon",
+            "rdate": "20 Oct 2021"
+
+        }, {
+
+            "bookimg": "b7.png",
+            "title": "မြန်မာသစ်လူ့အဖွဲ့အစည်း နိုင်ငံရေး",
+            "author": "မင်းသေ့",
+            "rating": 4.5,
+            "review": 7,
+            "username": "Min Naing",
+            "rdate": "12 Jan 2020"
+        }, {
+            "bookimg": "b8.png",
+            "title": "ပထမ သူတို့ ကျွန်မအဖေကို သတ်လိုက်ကြတယ်။",
+            "author": "ဝင်းငြိမ်း",
+            "rating": 7.5,
+            "review": 8,
+            "username": "Aye Maung",
+            "rdate": "10 Dec 2017"
+
+        }, {
+            "bookimg": "b9.png",
+            "title": "ရန်ကုန်မြို့တွင် သေဆုံးနိုင်သော နည်းပေါင်းတစ်ထောင်",
+            "author": "ကိတ်မုန့်",
+            "rating": 3.5,
+            "review": 9,
+            "username": "Julian",
+            "rdate": "25 Jul 2021"
+
+        }, {
+            "bookimg": "b10.png",
+            "title": "စတီဗင်ဂျရတ် (ကျွန်တော့်ဘ၀ ကျွန်တော့်အကြောင်း)",
+            "author": "ကျော့မောင်(မင်္ဂလာတောင်ညွန့်)",
+            "rating": 5.7,
+            "review": 10,
+            "username": "Myo Win",
+            "rdate": "07 Nov 2021"
+
+        }];
+        let books = arr;
+        let all_review = document.getElementsByClassName("reviews");
+
+        let i = 0,
+            c = 0;
+
+        let show = () => {
+            // document.getElementById("container").classList.add('classname');
+            i++;
+            if (i == books.length) {
+                i = 0;
+            } else if (i < 0) {
+                i = books.length - 1;
+            } else {
+
+                let point = books[i].rating - Math.floor(books[i].rating);
+                let num = Math.ceil(books[i].rating);
+                if (num == 1) {
+                    rating.innerHTML = '<i class="bi bi-star-fill"></i>';
+                } else if (num == 2) {
+                    rating.innerHTML = '<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>';
+                } else if (num == 3) {
+                    rating.innerHTML = '<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>';
+                } else if (num == 4) {
+                    rating.innerHTML = '<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>';
+                } else if (num == 5) {
+                    rating.innerHTML = '<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>';
+                } else if (num == 6) {
+                    rating.innerHTML = '<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>';
+                } else if (num == 7) {
+                    rating.innerHTML = '<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>';
+                } else if (num == 8) {
+                    rating.innerHTML = '<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>';
+                } else if (num == 9) {
+                    rating.innerHTML = '<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>';
+                } else if (num == 10) {
+                    rating.innerHTML = '<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>';
+                } else {
+                    rating.innerHTML = "";
+                }
+
+                if (point != 0) {
+                    rating.innerHTML += '<i class="bi bi-star-half"></i>';
+                }
+                username.innerHTML = books[i].username;
+                rdate.innerHTML = books[i].rdate;
+                title.innerHTML = books[i].title;
+                author.innerHTML = books[i].author;
+                bookimg.src = "images/" + books[i].bookimg;
+                for (c = 0; c < all_review.length; c++) {
+
+                    all_review[c].classList.remove("seek");
+                    all_review[c].classList.add("hide");
+                }
+                all_review[i].classList.remove("hide");
+                all.review[i].classList.add("seek");
+            }
+        }
+
+        let stopanir = () => {
+            if (container.classList.contains("classname")) {
+                container.classList.remove("classname");
+            }
+        }
+        let right = () => {
+            document.getElementById("container").classList.add('classname');
+            i++;
+            if (i == books.length) {
+                i = 0;
+            } else if (i < 0) {
+                i = books.length - 1;
+            } else {
+                let point = books[i].rating - Math.floor(books[i].rating);
+                let num = Math.ceil(books[i].rating);
+                if (num == 1) {
+                    rating.innerHTML = '<i class="bi bi-star-fill"></i>';
+                } else if (num == 2) {
+                    rating.innerHTML = '<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>';
+                } else if (num == 3) {
+                    rating.innerHTML = '<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>';
+                } else if (num == 4) {
+                    rating.innerHTML = '<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>';
+                } else if (num == 5) {
+                    rating.innerHTML = '<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>';
+                } else if (num == 6) {
+                    rating.innerHTML = '<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>';
+                } else if (num == 7) {
+                    rating.innerHTML = '<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>';
+                } else if (num == 8) {
+                    rating.innerHTML = '<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>';
+                } else if (num == 9) {
+                    rating.innerHTML = '<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>';
+                } else if (num == 10) {
+                    rating.innerHTML = '<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>';
+                } else {
+                    rating.innerHTML = "";
+                }
+
+                if (point != 0) {
+                    rating.innerHTML += '<i class="bi bi-star-half"></i>';
+                }
+                username.innerHTML = books[i].username;
+                rdate.innerHTML = books[i].rdate;
+                title.innerHTML = books[i].title;
+                author.innerHTML = books[i].author;
+                bookimg.src = "images/" + books[i].bookimg;
+                for (c = 0; c < all_review.length; c++) {
+                    all_review[c].classList.remove("seek");
+                    all_review[c].classList.add("hide");
+                }
+                all_review[i].classList.remove("hide");
+                all.review[i].classList.add("seek");
+            }
+
+        }
+        let autochg = () => {
+            setInterval(show, 5500);
+
+            // setInterval(anigp,2000);//  ဒီမှာ သတိထားဖို့က functionname ပဲ ()မပါဘူး
+        }
+        let stopanil = () => {
+            if (container.classList.contains("classname2")) {
+                container.classList.remove("classname2");
+            }
+        }
+        let left = () => {
+            document.getElementById("container").classList.add('classname2');
+            i--;
+            if (i == books.length) {
+                i = 0;
+            } else if (i < 0) {
+                i = books.length - 1;
+            } else {
+                let point = books[i].rating - Math.floor(books[i].rating);
+                let num = Math.ceil(books[i].rating);
+                if (num == 1) {
+                    rating.innerHTML = '<i class="bi bi-star-fill"></i>';
+                } else if (num == 2) {
+                    rating.innerHTML = '<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>';
+                } else if (num == 3) {
+                    rating.innerHTML = '<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>';
+                } else if (num == 4) {
+                    rating.innerHTML = '<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>';
+                } else if (num == 5) {
+                    rating.innerHTML = '<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>';
+                } else if (num == 6) {
+                    rating.innerHTML = '<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>';
+                } else if (num == 7) {
+                    rating.innerHTML = '<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>';
+                } else if (num == 8) {
+                    rating.innerHTML = '<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>';
+                } else if (num == 9) {
+                    rating.innerHTML = '<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>';
+                } else if (num == 10) {
+                    rating.innerHTML = '<i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>';
+                } else {
+                    rating.innerHTML = "";
+                }
+
+                if (point != 0) {
+                    rating.innerHTML += '<i class="bi bi-star-half"></i>';
+                }
+                username.innerHTML = books[i].username;
+                rdate.innerHTML = books[i].rdate;
+                title.innerHTML = books[i].title;
+                author.innerHTML = books[i].author;
+                bookimg.src = "images/" + books[i].bookimg;
+                for (c = 0; c < all_review.length; c++) {
+
+                    all_review[c].classList.remove("seek");
+                    all_review[c].classList.add("hide");
+                }
+                all_review[i].classList.remove("hide");
+                all.review[i].classList.add("seek");
+            }
+        }
+    </script>
+
+
+</head>
+
+<body onload="autochg();">
+    <div class="headergp">
+        <img src="images/logoleft.png" alt="">
+        <h1 id="header">Phoenix BookShop</h1>
+        <img src="images/logo.png" alt="">
+    </div>
+    <div id="searchgp">
+
+        <h3><i class="bi bi-envelope-at-fill"></i>phoenixbookshop@facebook.com ,<i class="bi bi-telephone-inbound-fill"></i>+95978945123</h3>
+        <div id="search"><input type="text" onkeyup="filterfood(this);"><i id="searchIcon" class="bi bi-search"></i></div>
+    </div>
+
+    <div class="outer">
+        <div class="prev"><i class="bi bi-caret-left-fill" onclick="left();" onmouseout="stopanil();"></i></div>
+        <div id="cover"></div>
+
+        <div id="container">
+            <div class="left">
+                <div class="usergp"><i class="bi bi-person-circle"></i><span id="username">user name</span>
+                    <article id="rdate"> 15 june 2022</article>
+                </div>
+
+                <h2 id="title">မေတ္တာ…အလင်းနဲ့စွမ်းအား</h2>
+                <h4 id="author">မွန်ဟော်စီ</h4>
+                <h5 id="rating"><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i></h5>
+                <p id="review1" class="reviews seek">
+                    မေတ္တာဆိုတာ အင်မတန်ကြီးမားမြတ်တဲ့ အမြင့်မားဆုံးစွမ်းအားတစ်ခု ဖြစ်ပါတယ်… အလင်း ဆိုတာလည်း အမှောင်ထဲက အလင်းစက်သေးသေးလေးပေမယ့် သူ့အလင်းရဲ့စွမ်းအားဟာ ကျွန်မ တို့အတွက် အင်အားတွေကို ပေးတယ်… စွမ်းအားဆိုတာကတော့ စိတ်ရဲ့စွမ်းအား၊ အသိဉာဏ် ပညာရဲ့ စွမ်းအား၊ သတိရဲ့အလေ့အကျင့်
+                    စွမ်းအားတွေကို ဆိုလိုခြင်းဖြစ်ပါတယ်။ တကယ်တော့ ကျွန်မဟာလည်း မေတ္တာ…အလင်းနဲ့စွမ်းအားတွေကို ဝေမျှနေတာပါပဲ။ ဒီလိုဝေမျှမှုကြောင့် ကမ္ဘာကြီးတစ်ခု လုံးမဟုတ်တောင် ကျွန်မရဲ့ပတ်ဝန်းကျင်… ကျွန်မစာတွေကို ဖတ်ကြတဲ့ စာဖတ်သူ တွေရဲ့ ပတ်ဝန်းကျင်မှာ
+                    အချင်းချင်း ချိတ်ဆက်မျှဝေပြီး မေတ္တာတွေ..၊ အလင်းတွေ..၊ စွမ်းအားတွေ.. ပြည့်လျှံလာစေဖို့ ရည်ရွယ်ပါတယ်။ လောဘ၊ ဒေါသ၊ မောဟ၊ အတ္တ၊ မာနတွေ များနေလေ ကျွန်မတို့ရဲ့ ကမ္ဘာလောကကြီးဟာ အမှောင်ဓာတ်တွေ ကြီးစိုးလာလေပဲဖြစ်ပါတယ်…။ ဒါကြောင့် မေတ္တာ… အလင်းနဲ့
+                    စွမ်းအားတွေကိုလည်း အချင်းချင်း မျှဝေဖို့ ပြောလိုပါတယ်…။
+                </p>
+                <p id="review2" class="reviews hide">ဖွင့်ဟပြောမှချစ်တယ်လို့ သိရမှာလားလို့ မေးခွန်းထုတ်ချင်စိတ် ပေါက်လာတဲ့ သုံးပွင့်ဆိုင် ဇာတ်လမ်းလေး။ စိတ်ထဲရှိသမျှစကားတွေ အကုန်ပြောပြဖို့ ချစ်တဲ့သူ နှစ်ယောက်အတွက် ဘာလို့များ အခွင့်အရေးမရှိခဲ့တာလဲ။ မရေရာတဲ့ လမ်းတစ်ခုပေါ်မှာ စောင့်စားသူ ရောက်မလာ
+                    ခဲ့တာတောင် ကံကြမ္မာကိုယုံကြည်ပြီး နှစ်ရှည်လများ စောင့်စားနေခဲ့သူ လေးလေးမော်။ ဘယ်တော့မှမပြောခဲ့တဲ့ စကားတွေဟာ ဘယ်တော့မှလည်းထပ်ကြားစရာမလိုဘဲ မြူမှုန်တွေ ကြားထဲ တိုးဝင်ပျောက်ကွယ် သွားတော့မလားလို့ ခံစားနေရတဲ့ သက်ဇော် ခေါ် ရည်းစားများတဲ့
+                    ကောင်ချောလေး ဖိုးသက်။ သဘောကောင်းသူတစ်ယောက်လို့ ပတ်ဝန်းကျင် ယုံမှတ်စေဖို့ စည်းတွေ ဘောင်တွေကြားမှာ အတင်းလူကြီးဆန်နေရတဲ့ ကိုကိုမင်းထက်။ သူတို့သုံးဦးရဲ့ ရင်မောဖွယ်၊ စိတ်လှုပ်ရှားဖွယ် အချစ်ဇာတ်လမ်း ရိုးရိုးလေးတစ်ပုဒ်။ အမျိုးသား စာပေဆုရ
+                    ဆရာမစံပယ်ဖြူနုရဲ့ ပထမဦးဆုံးလက်ရာဖြစ်တဲ့ ၀တ္ထုလတ်။ လွတ်လပ်မှုကို မြတ်နိုးတဲ့ မိန်းမငယ်လေးတစ်ယောက်ရဲ့ အတွေးတွေ၊ ရင်ခုန်လှိုက်မောစရာတွေကို ခံစားမိစေမယ့် ၀တ္ထု တစ်ပုဒ်။</p>
+
+                <p id="review3" class="reviews hide">ဇင်ဗုဒ္ဓဘာသာဘုန်းတော်ကြီး ဟေမန်ဆူနမ် (Haemin Sunim) ရေးသားတဲ့ The Things You Can See Only When You Slow Down စာအုပ်ကို ဆရာမောင်သန်းမှ မြန်မာဘာသာပြန်ဆိုထားသည့် စာအုပ်ဖြစ်ပါတယ်။ မူရင်းစာအုပ်ဟာ နိုင်ငံခြား ဘာသာပေါင်း ၃၀ ကျော်ထိ ဘာသာပြန်ထားပြီး
+                    အုပ်ရေသုံးသန်းကျော် ရောင်းချထားပြီးဖြစ်တဲ့ ကမ္ဘာကျော်စာအုပ်တစ်အုပ် ဖြစ်ပါတယ်။အခန်း တစ်ခန်းစီကို အက်ဆေးတစ်ပုဒ်နဲ့စထားပြီး မှတ်သားဖွယ် အကြောင်းအရာခပ်တိုတို လေးတွေကို နောက်ဆက်တွဲ ရေးပြထားပါတယ်။ ကိုယ့်ရဲ့အနာဂတ်နဲ့ ပတ်သက်ပြီး အသေချာ မရေရာ
+                    ဖြစ်နေရင်၊ ကိုယ့်ရဲ့ဝါသနာကို မသိရင်၊ ကိုယ့်အကြောင်းကို ပိုနားလည်လာဖို့နဲ့ ကိုယ့်ရဲ့ဝါသနာ ပါရာကို ရှာဖွေတွေ့ရှိဖို့ နည်းလမ်းတွေကို အကြံ ပေးထားပါတယ်။</p>
+                <p id="review4" class=" reviews hide">ဗုဒ္ဓဝါဒ ဘာကြောင့်မှန်သလဲ စာအုပ်သည် ၂၀၁၇ခုနှစ်တွင် ထွက်ရှိခဲ့သည့် စာအုပ်ဖြစ်ပြီး ဆင့်ကဲ ဖြစ်စဉ်ဆိုင်ရာ စိတ်ပညာရှင်နှင့် ဂျာနယ်လစ်တစ်ဦးဖြစ်သူ ရောဘတ်ရွိုက်မှ ရေးသားခဲ့သည်။ ၂၀၁၇ ဩဂုတ်လတွင် နယူးယော့ခ်တိုင်းက ရောင်းအားအကောင်းဆုံး သုတစာပေ စာအုပ်အဖြစ်
+                    ဖော်ပြခြင်းခံရသည်။ယခုစာအုပ်တွင် ကမ္မဋ္ဌာန်းတရားအားထုတ်ခြင်းနည်းသည် သန့်ရှင်းစင်ကြယ် မှုနှင့် လွတ်မြောက်မှု၏ အခြေခံအုတ်မြစ်အဖြစ် မည်သို့ အထောက်အကူပြုနိုင်သည်ကို စိတ်ပညာ၊ ဒဿန၊ သိပ္ပံအမြင်ဖြင့် နက်နက်ရှိုင်းရှိုင်းဖော်ထုတ်ရေးသားပြီး ဗုဒ္ဓဝါဒ
+                    အပေါ် အနောက်တိုင်း ပညာရှင်တစ်ဦး၏ အမြင်များ ဖော်ပြထားပါသည်။</p>
+                <p id="review5" class="reviews hide">
+                    ဒီစာအုပ်ထဲမှာ ရထားလမ်းဖောက်လုပ်စဉ်က ကြီးကြပ်တဲ့ စစ်သားအချို့ရဲ့ ရင့်သီးတဲ့အပြောအဆို ၊ စော်ကားနဲ့အပြုအမှု ၊နိုင့်ထက်စီးနင်း ဆူဆဲမှုတွေကို ရိုးသားတဲ့ တောသူတောင်သားတွေ ခံကြ ရတဲ့ မြင်ကွင်းတွေအပြင် အဆိုးဆုံးကတော့ မိန်းမပျိုလေး‌တွေ ကိုယ်ထိလက်ရောက် ကျုးလွန်
+                    ခံရပြီး ဘ၀ပျက်သွားတဲ့ အဖြစ်အပျက်တွေရှိကြောင်း မြင်တွေ့ရလိမ့်မယ်။ ရထားလမ်းဖောက်လုပ် ရာလမ်းတစ်လျှောက် ရွာတွေက တစ်အိမ်တစ်ယောက် မဖြစ်မနေ လုပ်အားပေးကြပါဆိုတဲ့ အမိန့်အောက်မှာ ကိုယ့်ထမင်းကိုယ်စားပြီး ကြီးတော်နွား ကျောင်းရခဲ့ရသလို အချိန်တန်အိမ်အပြန်
+                    မှာလည်း ဗိုက်တစ်လုံးနဲ့ ကျန်ခဲ့ရတဲ့ ဘ၀တွေဟာ အမှောင်နဲ့မလွတ်တဲ့ ကြယ်ကလေးတွေ လိုပါပဲလား
+                </p>
+                <p id="review6" class="reviews hide">
+
+                    သူဌေးတိုင်းပြည်လို့ နာမည်ကြီးနေသော အမေရိကန်ပြည်ကို ပြောင်းရွှေ့အလုပ် လုပ်ကိုင်တဲ့ မိသားတစ်စုရဲ့ ရုန်းကန်လှုပ်ရှားရပုံများကို မြင်တွေ့ရမယ့် ဆရာကြီး ရွှေဥဒေါင်းရဲ့ ၁၉၅၅ခုနှစ် စာပေဗိမာန် ဘာသာပြန်ဆုရ စာအုပ်ကောင်း တစ်အုပ် .. အစားလေးတစ်လုတ်စားရဖို့အရေး ရှာလိုက်ရတဲ့အလုပ်တွေ
+                    .. အလုပ်လေးတစ်ခု ရလာရင်လည်း အဲ့အလုပ် ပြန်ပြုတ်မသွားအောင် ဗလက္ကာရ ပြုကျင့်တာကိုတောင် ရေငုံနှုတ်ပိတ်နေရတဲ့ အဖြစ်တွေက ရင်နင့်စရာ ..အထူးသဖြင့် အရင်းရှင်လူတန်းစား တစ်ရပ်က အလုပ်သမားလူတန်းစားတွေကို ဖိနှိပ်ပီး ဂုတ်သွေးစုပ် အုပ်ချုပ်နေကြတဲ့
+                    အဖြစ်ကို ပေါ်လွင်အောင် ရေးသားထားနိုင်တဲ့ စာအုပ်တစ်အုပ်ပဲဖြစ်ပါတယ် ..
+                </p>
+                <p id="review7" class="reviews hide">မြန်မာ့လူ့အဖွဲ့အစည်းကို ဉာဏ်ပညာရှေ့ဆောင်သည့် လူမှုအသိုက်အဝန်းဖြစ်အောင်၊ တိုင်းပြည်ရဲ့ အနာဂတ်ကို မြန်မြန်သွက်သွက် ရှေ့ရောက်အောင်၊ ပြည်သူလူထုနှင့် စာဖတ်သူတစ်ဦးချင်းစီကို တိုင်းပြည်အတွက် စိတ်အားထက်သန်သည့် လူမှုပြုပြင်မှုများဖြင့် မြန်မာပြည်သစ်ကို
+                    ခရီးဆက် နိုင်အောင်… ဆောင်းပါးတစ်ပုဒ်ချင်းမှသည် စာအုပ်တစ်အုပ်လုံးအထိ အားသွန်ခွန်စိုက် ရေးသား ထားသည့် အတွေးအခေါ် တော်လှန်ရေး စာအုပ်တစ်အုပ်ဟုဆိုလျှင် ပိုမည် မဟုတ်ပါ။ စာပေ၊ ယဉ်ကျေးမှု၊ ပညာ၊ အတွေးအခေါ်၊ ဓလေ့စရိုက်၊ လူမှုစရိုက်၊ သမိုင်း၊
+                    နိုင်ငံရေး၊ အုပ်ချုပ်ရေး၊ ဒီမိုကရေစီအရေး..စသည့် မြန်မာ့လူ့အဖွဲ့အစည်းနှင့်ဆိုင်သည့် ဘက်ပေါင်းစုံ နယ်ပယ်ကဏ္ဍ ပေါင်းစုံကို ဆင်ခြင်သုံးသပ်ထားသည့် အတွေးအခေါ်သစ်များ ဒင်းပြည့်ကျပ်ပြည့်ဟု ဆိုရပါမည်။ စာအုပ်အမည်ကိုက မြန်မာသစ်၊ လူ့အဖွဲ့အစည်း၊
+                    နိုင်ငံရေး… ဟု ဆိုထားသည် မဟုတ်ပါလား။</p>
+                <p id="review8" class="reviews hide">ဖနွမ်ပင်မြို့မှာ မိသားစုနဲ့အတူ နေထိုင်တဲ့ အသက် ၅ နှစ်အရွယ်ကောင်မလေးဟာ ခမာနီတွေ အာဏာမသိမ်းခင်က ကလေးပီပီ ဆော့ကစားရင်းနဲ့ ပျော်ရွှင်နေခဲ့တယ်။ ခမာနီတွေ အာဏာသိမ်း လိုက်တော့ မြို့နေလူထုတစ်ရပ်လုံးက လက်ခုပ်လက်ဝါးတီးပီး အားပေးခဲ့ကြတဲ့အထဲမှာ သူမ
+                    တောင် ပါ၀င်ခဲ့ပါသေးတယ်။ ကံကြမ္မာဆိုးကြီးကို ပျော်ရွှင်စွာနဲ့ ကြိုဆိုခဲ့မိကြတာပေါ့။ အာဏာ သိမ်းပီး မကြာခင်မှာပဲ ခမာနီတွေဟာ အမေရိကန်တွေ ဗုံးလာကြဲတော့မလိုလို ပြောဆိုပီး မြို့နေ လူထုကို တောနယ်တွေဆီ အလိမ္မာသုံး နှင်ထုတ်လိုက်ပါတယ်> အဲ့အချိန်ကစပြီး
+                    ခမာနီ တွေဟာ သူတို့ရဲ့ အစွန်းရောက်တဲ့ ကွန်မြူနစ်ဝါဒကို ကမ္ဘောဒီးယားလူမျိုးအားလုံးကို သက်ရောက် စေခဲ့တယ်။ အဲ့ဒီအခြေအနေကြီးကို အသက် ၅ နှစ်အရွယ် လောင်လို့ အမည်ရတဲ့ ကောင်မလေး ဟာ ဖြတ်သန်းခဲ့ရပါတယ်။ ဒီစာအုပ်လေးဟာ သူမရဲ့ အဖြစ်သနစ်ဆိုလည်း ဟုတ်တယ်
+                    .. သို့တည်း မဟုတ် ထိုခေတ် ထိုအခါတုန်းက ကမ္ဘောဒီးယားမှာ ရှင်သန်နေထိုင်ခဲ့ကြသူတွေရဲ့ အကြောင်း ဆိုလည်း ဟုတ်တယ်လို့ အမှာစကား ဆိုထားပါတယ်</p>
+                <p id="review9" class="reviews hide">ဒီစာအုပ်ဟာ စာရေးသူ ကိတ်မုန့်ရဲ့ တတိယမြောက် လုံးချင်းဝတ္ထုဖြစ်ပါတယ်။ ကိတ်မုန့်ဟာ ဝတ္ထုရေးသားဖန်တီးမှုအားဖြင့် ၂၀၁၆ကစလို့ မဂ္ဂဇင်းစာမျက်နှာ တချို့မှာ ဝတ္ထုတိုများနဲ့ ပါဝင် ရေးသားခဲ့ပါတယ်။ ရန်ကုန်တွင် သေဆုံးနိုင်သော နည်းပေါင်းတစ်ထောင်ဝတ္ထုဟာ
+                    သူ့မြင်ကွင်းထဲ ဖြတ်ခနဲ ဝင်လာတဲ့ သတ်ကွင်းတွေနဲ့ အန္တရာယ်ရောပြွန်းနေတဲ့ ရန်ကုန်မြင်ကွင်းကျယ်တွေကို ကြည့်ရင်း ခေါင်းထဲ ပေါ်လာ တာများကို သူ့မှာရှိနေတဲ့ ဇာတ်ကောင်တွေနဲ့ ပေါင်းစပ်ဖန်တီးထား တာလို့ စာရေးသူက ဆိုလာပါတယ်။ ဒီဝတ္ထုမှာ သေဆုံးခြင်းနည်းပေါင်းတစ်ထောင်ကို
+                    မြင်တွေ့ ရမယ် ဆိုပေမယ့် ပျော်စရာကောင်းတဲ့ ဇာတ်လမ်းများကိုလည်း ရင်ခုန်စိတ်လှုပ်ရှားဖွယ် ခံစား ရလိမ့်မယ်လို့ ထပ်လောင်းပြောချင်ပါတယ် ။ စာရေးသူကတော့ သူ့အမာခံပရိတ်သတ်နဲ့ သူ့ဝတ္ထု တိုများဖတ်ခဲ့ဖူးရင် သူဖွက်ထားတဲ့ ဥတွေကို ဒီဝတ္ထုမှာ တူးဖော်ရရှိလိမ့်မယ်လို့လည်း
+                    ဆိုထား ပါတယ်။
+                </p>
+                <p id="review10" class="reviews hide">အင်္ဂလန်အသင်းနှင့် လီဗာပူအသင်းတို့၏ အသင်းခေါင်းဆောင်ဂန္တဝင်ကစားသမား စတီဗင် ဂျရတ်၏ ၂၇ နှစ်တာ ကစားသမားဘ၀ နိမ့်မြင့်တက်ကျ ဖြတ်သန်းကြုံဆုံရသမျှ… အောင်ပွဲများ၊ ဆုဖလားများ၊ အရေးပါသည့်ကစားပွဲများ၊ ယှဉ်ပြိုင်ဘက် ကစာသမားများနှင့် နည်းပြဆရာများ
+                    အကြောင်း ဂျရတ်ကိုယ်တိုင် ပြန်ပြောင်း ပြောပြထားသည့် ဆန်းဒေးတိုင်းသတင်းစာ၏ အရောင်းရဆုံးစာရင်းဝင် ကိုယ်တိုင် ရေးအတ္ထုပ္ပတ္တိစာအုပ်တစ်အုပ်။</p>
+
+
+            </div>
+
+            <div class="right">
+                <img src="images/b1.png" alt="" id="bookimg">
+            </div>
+        </div>
+    </div>
+    <div class="next"><i class="bi bi-caret-right-fill" onclick="right();" onmouseout="stopanir();"></i></div>
+    </div>
+
+</body>
+
+</html>
